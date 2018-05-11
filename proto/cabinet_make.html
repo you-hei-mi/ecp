@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		<!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		<!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- 适应移动端end -->
+		<script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+		<link rel="stylesheet" href="assets/plugins/swiper/swiper-3.4.2.min.css">
+		<link rel="stylesheet" href="assets/css/bd/cabinet_make.css">
+		<title>你的烟柜你做主</title>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<script type="text/javascript">
+			window.zhuge = window.zhuge || [];
+			window.zhuge.methods = "_init debug identify track trackLink trackForm page".split(" ");
+			window.zhuge.factory = function(b) {
+				return function() {
+					var a = Array.prototype.slice.call(arguments);
+					a.unshift(b);
+					window.zhuge.push(a);
+					return window.zhuge;
+				}
+			};
+			for(var i = 0; i < window.zhuge.methods.length; i++) {
+				var key = window.zhuge.methods[i];
+				window.zhuge[key] = window.zhuge.factory(key);
+			}
+			window.zhuge.load = function(b, x) {
+				if(!document.getElementById("zhuge-js")) {
+					var a = document.createElement("script");
+					var verDate = new Date();
+					var verStr = verDate.getFullYear().toString() + verDate.getMonth().toString() + verDate.getDate().toString();
+					a.type = "text/javascript";
+					a.id = "zhuge-js";
+					a.async = !0;
+					a.src = (location.protocol == 'http:' ? "http://sdk.zhugeio.com/zhuge.min.js?v=" : 'https://zgsdk.zhugeio.com/zhuge.min.js?v=') + verStr;
+					a.onerror = function() {
+						window.zhuge.identify = window.zhuge.track = function(ename, props, callback) {
+							if(callback && Object.prototype.toString.call(callback) === '[object Function]') callback();
+						};
+					};
+					var c = document.getElementsByTagName("script")[0];
+					c.parentNode.insertBefore(a, c);
+					window.zhuge._init(b, x)
+				}
+			};
+			window.zhuge.load('388a60b87e534326973b8918ad8beca1', {
+				debug: true
+			}); //配置应用的AppKey
+		</script>
+		<script>
+			window.addEventListener('touchmove', function(e) {
+				e.preventDefault()
+			})
+		</script>
+	</head>
+
+	<body>
+		<div id="event-start"></div>
+		<div id="recover"></div>
+		<div class="make_box">
+			<div class="work_area_temp">
+				<div class="tempW"></div>
+			</div>
+			<div class="work_area ui-widget-header"><div class="a1 demarcation block"></div><div class="a1 demarcation_l block"></div><div class="a1 demarcation_t block"></div><div class="a1 demarcation_r block"></div><div class="a1 demarcation_d block"></div></div>
+			<div class="operation_box">
+				<p>将下方组件拖动到上方创作区域</p>
+				
+				<div class="button_box">
+					<div>
+						<i></i>
+						<button class="active">
+							红框灯箱
+						</button>
+					</div>
+					<div>
+						<i></i>
+						<button>
+							白框灯箱
+						</button>
+					</div>
+					<div>
+						<i></i>
+						<button>
+							烟包陈列区
+						</button>
+					</div>
+				</div>
+				<ul class="material_box">
+					<li class="active">
+						<div class="min_box">
+							<div class="ui-widget-content draggable block red_1_3x2"></div>
+						</div>
+						<div class="min_box">
+							<div class="ui-widget-content draggable block red_6x2"></div>
+						</div>
+						<div class="min_box">
+							<div class="ui-widget-content draggable block red_6x4"></div>
+						</div>
+					</li>
+					<li>
+						<div class="min_box">
+							<div class="ui-widget-content draggable block white_1_3x2"></div>
+						</div>
+						<div class="min_box">
+							<div class="ui-widget-content draggable block white_6x2"></div>
+						</div>
+						<div class="min_box">
+							<div class="ui-widget-content draggable block white_6x4"></div>
+						</div>
+					</li>
+					<li>
+						<div class="min_box">
+							<div class="ui-widget-content draggable block ash_1_9x2"></div>
+						</div>
+						<div class="min_box">
+							<div class="ui-widget-content draggable block ash_3_4x2"></div>
+						</div>
+						<div class="min_box">
+							<div class="ui-widget-content draggable block ash_4x2"></div>
+						</div>
+						<div class="min_box">
+							<div class="ui-widget-content draggable block ash_6x2"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="other">
+				<div class="submit_box"><a href="javascript:void(0)" class="mina"><img src="assets/img/bd/cabinet_make/pen.png" alt="">描述创意</a></div>
+				<span> </span>
+				<div class="submit_box" >
+					<a href="javascript:viod(0)" onclick="cabinetMake.preservation()"><img src="assets/img/bd/cabinet_make/submit.png" alt="" class="submit_make"></a>
+				</div>
+				<button>教程</button>
+			</div>
+		</div>
+		<!-- 描述弹出框 -->
+		<div class="v-transfer-dom1">
+			<div class="vux-alert">
+				<div class="vux-x-dialog vux-x-dialog-absolute">
+					<div class="weui-mask"></div>
+					<div class="weui-dialog">
+						<div class="weui-dialog__hd"><strong class="weui-dialog__title"></strong></div>
+						<div class="weui-dialog__bd"> <textarea type="text" id="describe" placeholder="一句话描述你的烟柜创意"></textarea></div>
+						<div class="weui-dialog__ft describeCloseBtn" onclick="cabinetMake.describeClose(1)">
+							<a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 教程 -->
+		<div class="swiper-container">
+			<button>X 关闭教程</button>
+			<div class="swiper-wrapper" id="swiper-wrapper">
+				<div class="swiper-slide"><a href="javascript:;void(0)"><img src="assets/img/bd/cabinet_make/1.jpg" alt=""></a></div>
+				<div class="swiper-slide"><a href="javascript:;void(0)"><img src="assets/img/bd/cabinet_make/2.gif" alt=""></a></div>
+				<div class="swiper-slide"><a href="javascript:;void(0)"><img src="assets/img/bd/cabinet_make/3.gif" alt=""></a></div>
+				<div class="swiper-slide"><a href="javascript:;void(0)"><img src="assets/img/bd/cabinet_make/4.jpg" alt=""></a></div>
+				<div class="swiper-slide"><a href="javascript:;void(0)"><img src="assets/img/bd/cabinet_make/5.jpg" alt=""></a><button></button></div>
+			</div>
+			<div class="swiper-button-next swiper-button-white"></div>
+			<div class="swiper-button-prev swiper-button-white"></div>
+			<div class="swiper-pagination"></div>
+		</div>
+
+
+		<!-- built files will be auto injected -->
+		<span id="Vertical" style="position: absolute;left: 50%;top: 48%;margin-left: -73px;display: none">请使用竖屏访问!</span>
+		<script src="assets/plugins/jquery-1.7.2.min.js"></script>
+		<script src="http://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+		<script src="assets/plugins/jquery-ui/jquery-ui-1.8.21.min.js"></script>
+		<script src="assets/plugins/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/swiper/swiper-3.4.2.min.js"></script>
+		<script src="assets/plugins/jquery-ui/jquery.ui.sortable.js"></script>
+		<script src="assets/js/common.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+		<!--<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>-->
+		<!--<script src="assets/plugins/jquery.ui.touch-punch.min.js"></script>-->
+		<!--<script src="assets/plugins/jquery.ui.sortable.js"></script>-->
+		<script src="assets/js/bd/cabinet_make.js"></script>
+		<script>
+			$(function() {
+				cabinetMake.init();
+			})
+		</script>
+	</body>
+
+</html>

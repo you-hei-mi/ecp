@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="">
+    <title>上传照片</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="assets/css/bd/paizhao.css">
+    <link rel="stylesheet" href="assets/plugins/jquery.mloading/jquery.mloading.css">
+    <script src="assets/plugins/jquery-1.11.3.js"></script>
+    <script src="assets/plugins/jquery.mloading/jquery.mloading.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script type="text/javascript">
+        window.zhuge = window.zhuge || [];window.zhuge.methods = "_init debug identify track trackLink trackForm page".split(" ");
+        window.zhuge.factory = function(b) {return function() {var a = Array.prototype.slice.call(arguments);a.unshift(b);
+            window.zhuge.push(a);return window.zhuge;}};for (var i = 0; i < window.zhuge.methods.length; i++) {
+            var key = window.zhuge.methods[i];window.zhuge[key] = window.zhuge.factory(key);}window.zhuge.load = function(b, x) {
+            if (!document.getElementById("zhuge-js")) {var a = document.createElement("script");var verDate = new Date();
+                var verStr = verDate.getFullYear().toString()+ verDate.getMonth().toString() + verDate.getDate().toString();
+                a.type = "text/javascript";a.id = "zhuge-js";a.async = !0;a.src = (location.protocol == 'http:' ? "http://sdk.zhugeio.com/zhuge.min.js?v=" : 'https://zgsdk.zhugeio.com/zhuge.min.js?v=') + verStr;
+                a.onerror = function(){window.zhuge.identify = window.zhuge.track = function(ename, props, callback){if(callback && Object.prototype.toString.call(callback) === '[object Function]')callback();};};
+                var c = document.getElementsByTagName("script")[0];c.parentNode.insertBefore(a, c);window.zhuge._init(b, x)}};
+        window.zhuge.load('388a60b87e534326973b8918ad8beca1');//配置应用的AppKey
+    </script>
+</head>
+<body>
+<div class="grid_wrapper">
+    <ul class="grid">
+        <li class="btn">
+            <input type="file" class="newFile" name="file" accept="image/*" capture="camera" size="100"/>
+        </li>
+    </ul>
+</div>
+<div class="three">
+    <button type="button" id="upload" disabled="disabled">上传</button>
+</div>
+<script src="assets/js/bd/paizhao.js"></script>
+<script type="text/javascript">
+    $(function () {
+        Paizhao.init();
+    })
+</script>
+</body>
+</html>

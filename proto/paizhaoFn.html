@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="">
+    <title>上传照片</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="assets/js/common.js"></script>
+    <script src="assets/plugins/jquery-1.11.3.js"></script>
+    <style>
+        #submitUpload{
+            width: 70%;
+            margin: 10% 15% 0 15%;
+            border: 0;
+            padding: 2% 0;
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<div id="submit"></div>
+<script src="assets/js/bd/paizhaoFn.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        var rect= new PaizhaoFn({
+            uploadingId : '#box',
+            submitId : '#submit',
+            activityModelId : "00",
+            fileCount : "11",
+            uploading : {
+                url :'http://192.168.1.126:51901/picresource/pic_activity/upload_picture_to',
+                arguments : 'file'
+            },
+            submitName : "提交按钮",
+            uploadingResult : "44",
+            submitResult : "55",
+        });
+        //上传照片成功
+        rect.uploadingSuccess = function (res) {
+            console.log('成功1')
+        };
+        //上传照片失败
+        rect.uploadingError = function (err) {
+            console.log('失败1')
+        };
+    })
+</script>
+</body>
+</html>
